@@ -1,0 +1,35 @@
+* {
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.input-container textarea, .output-container button{
+    height: 85vh;
+    width: 400px;
+}
+
+.input-container textarea{
+    resize: none;
+    vertical-align: text-top;
+}
+
+.output-container p {
+    margin: 0px;
+}
+
+h1 {
+    height: 5vh;
+    font-size: auto;
+}
+
+button {
+    display: inline-flex;
+    align-items: top;
+    background-color: white;
+    color: black;
+}
