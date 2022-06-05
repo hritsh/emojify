@@ -84,10 +84,7 @@ export class AppComponent {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
-    document.getElementById("outputHeading")!.innerHTML = "Copied!";
-    setTimeout(function(){
-        document.getElementById('outputHeading')!.innerHTML = "Output (Click to Copy)";
-    }, 2000);
+    alert("Copied to clipboard!")
   }
   
 }
