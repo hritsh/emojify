@@ -1,30 +1,48 @@
-* {
+*, *:before, *:after {
+    box-sizing: inherit;
     font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: black solid 1px;
+}
+
+.title {
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 0.5rem;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
 }
 
-.input-container textarea, .output-container button{
-    height: 85vh;
-    width: 400px;
+.input-container, .output-container {
+    padding: 1rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: auto;
 }
 
-.input-container textarea{
+.input-container textarea, .output-container textarea{
+    width: 99%;
+}
+
+.input-container textarea {
     resize: none;
-    vertical-align: text-top;
+    height: 98%;
 }
 
-.output-container p {
-    margin: 0px;
-}
-
-h1 {
-    height: 5vh;
-    font-size: auto;
+.output-container textarea {
+    resize: none;
+    cursor: pointer;
+    height: calc(98% - 2.5rem);
 }
 
 button {

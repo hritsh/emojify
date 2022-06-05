@@ -1,10 +1,10 @@
 <div class="container">
+  <div class="title">EM🅾️JIFY</div>
   <div class="input-container">
-    <h1>Text Input</h1>
-    <textarea #textArea autofocus placeholder="Start typing here..." (input)="onInput(textArea.value)"></textarea>
+    <textarea #inputBox autofocus placeholder="Start typing here..." (input)="onInput(inputBox.value)"></textarea>
   </div>
   <div class="output-container">
-    <h1 id="outputHeading">Output (Click to Copy)</h1>
-    <button (click)="copyMessage()" value="click to copy"> {{ output }} </button>
+    <div class="heading" id="outputHeading">Output (Click to Copy)</div>
+    <textarea (click)="copyMessage()" readonly> {{ output }} </textarea>
   </div>
 </div>
