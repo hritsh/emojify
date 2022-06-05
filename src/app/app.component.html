@@ -1,10 +1,12 @@
-<div class="container">
-  <div class="title">EM🅾️JIFY</div>
-  <div class="input-container">
-    <textarea #inputBox autofocus placeholder="Start typing here..." (input)="onInput(inputBox.value)"></textarea>
-  </div>
-  <div class="output-container">
-    <div class="heading" id="outputHeading">Output (Click to Copy)</div>
-    <textarea (click)="copyMessage()" readonly> {{ output }} </textarea>
+<div class="notify"><span id="notifyType" class=""></span></div>
+<div class="wrapper">
+  <div class="container">
+    <div class="title">E M 🅾️ J I F Y</div>
+    <div class="input-container">
+      <textarea #inputBox autofocus placeholder="Start typing here..." (input)="onInput(inputBox.value)"></textarea>
+    </div>
+    <div class="output-container">
+      <textarea (click)="copyMessage()" readonly placeholder="Click to Copy Emojified text"> {{ output }} </textarea>
+    </div>
   </div>
 </div>
