@@ -64,8 +64,12 @@
 .output-container div {
     /* cursor: pointer; */
     /* height: 100%; */
+    padding-top: 3rem;
     margin-bottom: 1rem;
     word-wrap: break-word;
+    justify-content: space-between;
+    position: relative;
+    float:left;
 }
 
 button {
@@ -73,6 +77,43 @@ button {
     align-items: top;
     background-color: white;
     color: black;
+}
+
+.titles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    border: 1px solid white;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10%;
+    font-size: 20px;
+    background-color: white;
+    color: #282935;
+    padding: 0.5rem;
+    cursor: default;
+}
+
+.copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    border: 1px solid white;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10%;
+    font-size: 20px;
+    background-color: white;
+    color: #282935;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.copy:hover, .copy:focus {
+    background-color: #282935;
+    color: white;
 }
 
 @media screen and (max-width: 800px) {

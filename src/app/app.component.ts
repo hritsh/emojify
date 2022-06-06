@@ -7,11 +7,11 @@ import { Emojify } from '@gaikema/emojify';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  inputText = "";
-  output: string[] = Array(10).fill("");
-  op: string = "";
+  text = "Start typing here...";
+  output: string[] = Array(9).fill("");
+  titles: string[] = ["Emojipasta", "Emoji", "Square", "Bubble", "Black Bubble", "Medivial", "Cursive", "Outline", "Japanese"];
 
-  onInput(text: string) {
+  onInput(text: string): void {
     this.output = [this.emojipasta(text), this.emojiReplace(text), this.squareReplace(text), this.bubbleReplace(text), this.blackBubbleReplace(text), this.medivialReplace(text), this.cursiveReplace(text), this.outlineReplace(text), this.japaneseReplace(text)];
   }
 
@@ -63,18 +63,32 @@ export class AppComponent {
     return result;
   }
 
-  copyMessage() {
-    // const selBox = document.createElement('textarea');
-    // selBox.style.position = 'fixed';
-    // selBox.style.left = '0';
-    // selBox.style.top = '0';
-    // selBox.style.opacity = '0';
-    // selBox.value = this.op;
-    // document.body.appendChild(selBox);
-    // selBox.focus();
-    // selBox.select();
-    // document.execCommand('copy');
-    // document.body.removeChild(selBox);
+  copyMessage(event: Event): void {
+    let elementId: string = (event.target as Element).id;
+    const element = document.getElementById(elementId) as HTMLInputElement | null;
+
+    if (element != null) {
+      element.innerHTML = "COPIED!";
+      element.style.color="white";
+      element.style.backgroundColor="#282935";
+      setTimeout(function(){
+        element.innerHTML = "COPY";
+        element.style.color="";
+        element.style.backgroundColor="";
+      }, 1500);
+    }
+
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = this.output[parseInt(elementId)];
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
     // alert("Copied to clipboard!")
   }
 
