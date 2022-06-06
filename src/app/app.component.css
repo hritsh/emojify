@@ -1,7 +1,7 @@
 *, *:before, *:after {
     box-sizing: inherit;
     font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     box-sizing: border-box;
 }
 
@@ -34,7 +34,18 @@
     width: auto;
 }
 
-.input-container textarea, .output-container textarea{
+.input-container {
+    min-height: 50vh;
+}
+
+.output-container {
+    height: min-content;
+    display: block;
+    min-height: min-content;
+    max-height: fit-content;
+}
+
+.input-container textarea, .output-container div{
     width: 99%;
     height: 98%;
     background-color: #282935;
@@ -50,8 +61,11 @@
     box-shadow: none;
 }
 
-.output-container textarea {
-    cursor: pointer;
+.output-container div {
+    /* cursor: pointer; */
+    /* height: 100%; */
+    margin-bottom: 1rem;
+    word-wrap: break-word;
 }
 
 button {
@@ -65,10 +79,6 @@ button {
     .container {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr 1fr;
-    }
-    
-    .input-container {
-        overflow-y: hidden;
     }
 
 }

@@ -6,7 +6,7 @@
       <textarea #inputBox autofocus placeholder="Start typing here..." (input)="onInput(inputBox.value)"></textarea>
     </div>
     <div class="output-container">
-      <textarea (click)="copyMessage()" readonly placeholder="Click to Copy Emojified text"> {{ output }} </textarea>
+      <div (click)="copyMessage()" readonly *ngFor="let op of output"> {{ op }} </div>
     </div>
   </div>
 </div>
